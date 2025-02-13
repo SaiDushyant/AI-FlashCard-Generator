@@ -1,0 +1,55 @@
+# ------------------------
+# General / OS Files
+# ------------------------
+.DS_Store
+Thumbs.db
+*.log
+
+# ------------------------
+# Frontend (Node.js / Vite / React)
+# ------------------------
+/frontend/node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.cache/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+/frontend/.vscode/
+/frontend/.idea/
+
+# ------------------------
+# Backend (Python / FastAPI)
+# ------------------------
+/backend/__pycache__/
+backend/__pycache__/
+backend/*.py[cod]
+backend/*.pyo
+backend/*.pyd
+backend/*.pyc
+/backend/venv/
+/backend/ENV/
+/backend/env/
+backend/*.egg-info/
+backend/.eggs/
+backend/dist/
+backend/build/
+backend/htmlcov/
+backend/.tox/
+backend/.nox/
+backend/.coverage
+backend/.coverage.*
+backend/nosetests.xml
+backend/coverage.xml
+backend/*.cover
+backend/*.sqlite3
+
+# ------------------------
+# Editor and IDE Files (common)
+# ------------------------
+*.sublime-workspace
+*.sublime-project

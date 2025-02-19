@@ -1,5 +1,5 @@
 from fastapi import FastAPI, File, UploadFile
-from backend.model import FlashcardGenerator
+from model import FlashcardGenerator
 import tempfile
 import os
 from fastapi.middleware.cors import CORSMiddleware

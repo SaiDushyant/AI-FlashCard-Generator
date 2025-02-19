@@ -1,5 +1,4 @@
-import pytest
-from backend.model import FlashcardGenerator
+from model import FlashcardGenerator
 
 
 def test_text_extraction():

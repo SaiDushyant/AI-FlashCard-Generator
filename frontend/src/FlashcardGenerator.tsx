@@ -47,10 +47,13 @@ function FlashcardGenerator() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/upload-pdf/", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://ai-flashcard-generator-h5ud.onrender.com/upload-pdf/",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to upload PDF. Please try again.");

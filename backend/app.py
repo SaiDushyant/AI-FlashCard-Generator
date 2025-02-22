@@ -1,11 +1,12 @@
 from fastapi import FastAPI, File, UploadFile
-from model import FlashcardGenerator
+from model import generate_enhanced_flashcards
 import tempfile
 import os
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Adjust this to the specific origins you want to allow
@@ -23,8 +24,17 @@ async def upload_pdf(file: UploadFile = File(...)):
         temp_path = temp_pdf.name
 
     # Process PDF
-    text = FlashcardGenerator.extract_text_from_pdf(temp_path)
-    flashcards = FlashcardGenerator.generate_flashcards(text)
+    with open(temp_path, "rb") as f:
+        # Extract text from PDF using PyPDF2
+        import PyPDF2
+
+        reader = PyPDF2.PdfReader(f)
+        text = ""
+        for page in reader.pages:
+            text += page.extract_text()
+
+    # Generate flashcards
+    flashcards = generate_enhanced_flashcards(text)
 
     # Cleanup
     os.unlink(temp_path)

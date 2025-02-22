@@ -53,3 +53,6 @@ backend/*.sqlite3
 # ------------------------
 *.sublime-workspace
 *.sublime-project
+
+
+/flashcard-model
